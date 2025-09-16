@@ -1,0 +1,67 @@
+.back-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 5rem;   /* Minimal vertical space */
+  background: #fff;
+  min-height: 65px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.18); /* Dark shadow below */
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  margin-top: 0;          /* Remove any default top margin */
+  
+  
+}
+
+.nav-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  gap: 0.3rem;
+}
+
+.back-navbar-btn {
+  background: #142b1e;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.back-navbar-btn:hover {
+  background: #219653;           /* Vibrant green-blue for hover */
+  color: #fff;                   /* stays white */
+  box-shadow: 0 2px 8px rgba(33, 150, 83, 0.18); /* colored glow on hover */
+}
+
+/* Responsive: keep everything on one row, reduce font and padding */
+@media (max-width: 500px) {
+  .back-navbar {
+    padding: 0.35rem 0.5rem;
+    min-height: 36px;
+  }
+  .nav-title {
+    font-size: 1rem;
+  }
+  .back-navbar-btn {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .back-navbar {
+    padding: 0 1.5rem;
+    min-height: 58px;
+  }
+}
+
+/* --------------------------------------------- */
+
+

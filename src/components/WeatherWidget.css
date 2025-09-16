@@ -1,0 +1,75 @@
+.weather-container {
+  /* Positioning */
+  position: absolute;
+  bottom: -50px;
+  right: -600px;
+  
+  /* Box Styling */
+  width: 250px;
+  background-color: rgba(15, 23, 42, 0.6);
+  color: white;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: left; /* Ensures text inside the widget is left-aligned */
+}
+
+/* All other weather widget styles (.weather-header, .detail-item, etc.) go here */
+.weather-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+.weather-main-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+.weather-location-temp {
+  display: flex;
+  flex-direction: column;
+}
+.location {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.temperature {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+.weather-container.error {
+  background-color: rgba(127, 29, 29, 0.7);
+}
+/* -------------------------------------------------------- */
+
+/* Media query for tablets and mobile phones */
+@media (max-width: 768px) {
+  .weather-container {
+    /* Resets the positioning */
+    position: relative;
+    bottom: auto;
+    right: auto;
+    
+    /* Re-centers the widget for smaller screens */
+    margin-top: 30px; 
+    width: 90%;
+    max-width: 350px;
+  }
+}
