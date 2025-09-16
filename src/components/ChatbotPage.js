@@ -28,7 +28,7 @@ function ChatbotPage() {
 
       {/* Chatbot runs inside iframe */}
       <iframe
-        src="http://127.0.0.1:5000"   // ⚠️ Replace with your Flask/FastAPI chatbot backend URL
+        src={process.env.REACT_APP_API_URL}   // ⚠️ Replace with your Flask/FastAPI chatbot backend URL
         title="Agri Chatbot"
         style={{ flex: 1, border: "none" }}
       />
