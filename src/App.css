@@ -1667,13 +1667,3 @@ html {
 /* ------------------------------------ */
 
 
-/* Add this to the bottom of src/App.css */
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex-grow: 1;
-}
