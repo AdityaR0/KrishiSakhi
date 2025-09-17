@@ -45,6 +45,13 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // This component will conditionally render the button
+  const ConditionalChatbotButton = () => {
+    const location = useLocation();
+    // Only show the button if the path is NOT /chatbot
+    return location.pathname !== "/chatbot" ? <ChatbotButton /> : null;
+  };
+
   return (
     <Router>
       <ScrollToTop />
