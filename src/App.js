@@ -6,26 +6,19 @@ import PredictionsPage from "./components/PredictionsPage";
 import ViewInsightsPage from "./components/ViewInsightsPage";
 import ChatbotPage from "./components/ChatbotPage";
 import ChatbotButton from "./components/ChatbotButton";
-import farmerVideo from "./components/asset/farmer_video.mp4"; // Add this line for your video
-import heroBackgroundImage from "./components/asset/hero_background.jpg"; // <--- Add this line
-import WeatherWidget from "./components/WeatherWidget"; //  Add this line
+import farmerVideo from "./components/asset/farmer_video.mp4";
+import heroBackgroundImage from "./components/asset/hero_background.jpg";
+import WeatherWidget from "./components/WeatherWidget";
 import CommunityPage from "./components/CommunityPage";
-import FarmProfile from "./components/FarmProfile"; // Import new component
-import ActivityLog from "./components/ActivityLog"; // Import new component
-
-
-
-import Navbar from "./components/Navbar";        // Your full homepage navbar
-import BackNavbar from "./components/BackNavbar"; // Simple back button navbar
-
+import FarmProfile from "./components/FarmProfile";
+import ActivityLog from "./components/ActivityLog";
+import Navbar from "./components/Navbar";
+import BackNavbar from "./components/BackNavbar";
 import Footer from "./components/Footer";
 import "./App.css";
-
 import CropYieldPage from "./components/CropYieldPage";
 import FertilizerPage from "./components/FertilizerPage";
 import DiseaseDetectionPage from "./components/DiseaseDetectionPage";
-
-// import aboutus from "./components/asset/aboutus.png"; 
 import cropImg from "./components/asset/crop.png";
 import fertilizerImg from "./components/asset/fertilizer.png";
 import diseaseImg from "./components/asset/disease.png";
@@ -53,18 +46,17 @@ function App() {
   }, []);
 
   return (
-    <Router> {/* <--- 1. REMOVE path and element from here */}
+    <Router>
       <ScrollToTop />
       <NavbarSwitcher />
       <Routes>
-       <Router path="/chatbot" element={<ChatbotPage />}> 
-        <Route path="/login" element={<LoginSignupPage />}/>
+        <Route path="/chatbot" element={<ChatbotPage />} />
+        <Route path="/login" element={<LoginSignupPage />} />
         <Route path="/predictions" element={<PredictionsPage />} />
         <Route path="/View Insights" element={<ViewInsightsPage />} />
         <Route path="/community" element={<CommunityPage />} />
         <Route path="/profile" element={<FarmProfile />} />
         <Route path="/log" element={<ActivityLog />} />
-        
 
         {/* Homepage */}
         <Route
@@ -72,62 +64,54 @@ function App() {
           element={
             <>
               <div className="scroll-progress-bar" style={{ width: `${scrollPercent}%` }} />
-              
               <main>
                 {/* Hero Section */}
                 <section id="hero" className="hero-section"
                   style={{
-                  backgroundImage: `url(${heroBackgroundImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  color: '#fff',
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
-                  position: 'relative',
-                  zIndex: 1,
-                  // minHeight: '80vh',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  padding: '165px 20px', // Replaced minHeight with padding
+                    backgroundImage: `url(${heroBackgroundImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    color: '#fff',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
+                    position: 'relative',
+                    zIndex: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    padding: '165px 20px',
                   }}
-                  >
-                    <div className="hero-content" style={{ textAlign: 'center' }}>
-                  <h1>
-                    SMART FARMING <span className="blue">MADE SIMPLE</span> WITH<span className="blue"> AI</span>
-                  </h1>
-                  <p>
-                    KrishiSakhi helps farmers grow better crops, choose the right fertilizers, and fight plant diseases — all with the power of machine learning.
-                  </p>
-                  <div>
-                    {/* <a href="/predictions" className="hero-btn">👤 Profile Summary</a> */}
-                    <a href="/profile" className="hero-btn">👤 Farm Profile</a>
-                    <a href="/Community" className="hero-btn" rel="noopener noreferrer">🤝Farmer Community</a>
-                    {/* <a href="/View Insights" className="hero-btn" rel="noopener noreferrer">📊 My Activities</a> */}
+                >
+                  <div className="hero-content" style={{ textAlign: 'center' }}>
+                    <h1>
+                      SMART FARMING <span className="blue">MADE SIMPLE</span> WITH<span className="blue"> AI</span>
+                    </h1>
+                    <p>
+                      KrishiSakhi helps farmers grow better crops, choose the right fertilizers, and fight plant diseases — all with the power of machine learning.
+                    </p>
+                    <div>
+                      <a href="/profile" className="hero-btn">👤 Farm Profile</a>
+                      <a href="/Community" className="hero-btn" rel="noopener noreferrer">🤝Farmer Community</a>
+                    </div>
                   </div>
-                  </div>
-                  <WeatherWidget /> {/* 👈 Add the component here */}
+                  <WeatherWidget />
                 </section>
 
                 {/* About Us Section */}
                 <section id="about" className="why-section">
                   <div className="section-title about-title">About Us</div>
                   <div className="why-card">
-                    {/* <img src={aboutus} alt="Soil in hand" className="why-img" /> */}
                     <video
-                    src={farmerVideo} // Use the imported video path
-                    autoPlay        // Auto-play the video
-                    loop            // Loop the video continuously
-                    muted           // Mute the video to allow auto-play in most browsers
-                    playsInline     // Important for iOS devices to play video inline
-                    className="why-img" // Keep the same class to apply existing styles
-                    // You can add explicit width/height if 'why-img' doesn't set it precisely enough
-                    // width="500" // Example: Adjust to match image width
-                    // height="300" // Example: Adjust to match image height
+                      src={farmerVideo}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="why-img"
                     >
-                    Your browser does not support the video tag.
+                      Your browser does not support the video tag.
                     </video>
                     <div>
                       <h2>WHY KrishiSakhi ?</h2>
@@ -173,17 +157,6 @@ function App() {
                         </Link>
                       </div>
                     </div>
-                    {/* <div className="feature-card">
-                    <img src={fertilizerImg} alt="Fertilizer Recommender" className="feature-img" />
-                    <div className="feature-content">
-                    <b>Fertilizer Suggestion</b>
-                    <p>Recommendation about the type of fertilizer best suited for the particular soil and the recommended crop.</p>
-                    Corrected code here
-                    <a href="http://127.0.0.1:5000" target="_blank" rel="noopener noreferrer">
-                     <button className="details-btn">🧪View Details</button>
-                    </a>
-                    </div>
-                    </div> */}
                     <div className="feature-card">
                       <img src={diseaseImg} alt="Plant Disease Detection" className="feature-img" />
                       <div className="feature-content">
@@ -199,46 +172,37 @@ function App() {
 
                 {/* Helpful Resources Section */}
                 <section className="resources-section">
-                <div className="section-title">Resources</div>
-                <div className="resources-grid">
-
-                {/* Resource Card 1 */}
-                <a href="https://pmkisan.gov.in/" target="_blank" rel="noopener noreferrer" className="resource-card">
-                <div className="resource-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
-                </div>
-                <h3>Government Schemes</h3>
-                <p>Official information on farmer support programs and subsidies.</p>
-                </a>
-
-                {/* Resource Card 2 */}
-                <a href="https://agmarknet.gov.in/" target="_blank" rel="noopener noreferrer" className="resource-card">
-                <div className="resource-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 013 4.5h.75m0 0a9 9 0 0118 0m-18 0v.75A.75.75 0 003 6h.75m0 0v-.75A.75.75 0 003 4.5h-.75m16.5 0a9 9 0 01-18 0m18 0v.75a.75.75 0 01-.75.75h-.75m0 0v-.75a.75.75 0 01.75-.75h.75m0 0h-.75a.75.75 0 00-.75.75v.75m-4.5 0a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" /></svg>
-                </div>
-                <h3>Market Prices</h3>
-                <p>Check the latest mandi (market) prices for various crops.</p>
-                </a>
-
-                {/* Resource Card 3 */}
-                <a href="https://mausam.imd.gov.in/responsive/agromet_adv_ser_state_current.php" target="_blank" rel="noopener noreferrer" className="resource-card">
-                <div className="resource-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-9.75 2.148A4.5 4.5 0 002.25 15z" /></svg>
-                </div>
-                <h3>Weather Advisory</h3>
-                <p>Access district-level agrometeorological advisories.</p>
-                </a>
-
-                {/* Resource Card 4 */}
-                <a href="https://krishijagran.com/" target="_blank" rel="noopener noreferrer" className="resource-card">
-                <div className="resource-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V21h-3.375m-13.5 0h3.375c.621 0 1.125-.504 1.125-1.125V7.5h-3.375a1.125 1.125 0 00-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125z" /></svg>
-                </div>
-                <h3>Farming News</h3>
-                <p>Stay updated with the latest news and best practices.</p>
-                </a>
-
-                </div>
+                  <div className="section-title">Resources</div>
+                  <div className="resources-grid">
+                    <a href="https://pmkisan.gov.in/" target="_blank" rel="noopener noreferrer" className="resource-card">
+                      <div className="resource-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
+                      </div>
+                      <h3>Government Schemes</h3>
+                      <p>Official information on farmer support programs and subsidies.</p>
+                    </a>
+                    <a href="https://agmarknet.gov.in/" target="_blank" rel="noopener noreferrer" className="resource-card">
+                      <div className="resource-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 013 4.5h.75m0 0a9 9 0 0118 0m-18 0v.75A.75.75 0 003 6h.75m0 0v-.75A.75.75 0 003 4.5h-.75m16.5 0a9 9 0 01-18 0m18 0v.75a.75.75 0 01-.75.75h-.75m0 0v-.75a.75.75 0 01.75-.75h.75m0 0h-.75a.75.75 0 00-.75.75v.75m-4.5 0a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" /></svg>
+                      </div>
+                      <h3>Market Prices</h3>
+                      <p>Check the latest mandi (market) prices for various crops.</p>
+                    </a>
+                    <a href="https://mausam.imd.gov.in/responsive/agromet_adv_ser_state_current.php" target="_blank" rel="noopener noreferrer" className="resource-card">
+                      <div className="resource-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-9.75 2.148A4.5 4.5 0 002.25 15z" /></svg>
+                      </div>
+                      <h3>Weather Advisory</h3>
+                      <p>Access district-level agrometeorological advisories.</p>
+                    </a>
+                    <a href="https://krishijagran.com/" target="_blank" rel="noopener noreferrer" className="resource-card">
+                      <div className="resource-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V21h-3.375m-13.5 0h3.375c.621 0 1.125-.504 1.125-1.125V7.5h-3.375a1.125 1.125 0 00-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125z" /></svg>
+                      </div>
+                      <h3>Farming News</h3>
+                      <p>Stay updated with the latest news and best practices.</p>
+                    </a>
+                  </div>
                 </section>
 
                 {/* Contact Us Section */}
@@ -299,12 +263,10 @@ function App() {
         <Route path="/fertilizer" element={<FertilizerPage />} />
         <Route path="/disease-detection" element={<DiseaseDetectionPage />} />
       </Routes>
-      
 
       <Footer />
-      <ChatbotButton /> 
-    </Router >
-    
+      <ChatbotButton />
+    </Router>
   );
 }
 
