@@ -53,10 +53,11 @@ function App() {
   }, []);
 
   return (
-    <Router path="/chatbot" element={<ChatbotPage />}> 
+    <Router> {/* <--- 1. REMOVE path and element from here */}
       <ScrollToTop />
       <NavbarSwitcher />
       <Routes>
+       <Router path="/chatbot" element={<ChatbotPage />}> 
         <Route path="/login" element={<LoginSignupPage />}/>
         <Route path="/predictions" element={<PredictionsPage />} />
         <Route path="/View Insights" element={<ViewInsightsPage />} />
