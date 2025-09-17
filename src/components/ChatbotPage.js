@@ -1,4 +1,3 @@
-// src/components/ChatbotPage.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -7,28 +6,11 @@ function ChatbotPage() {
 
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-      {/* Header */}
-      <header style={{ background: "#2563eb", padding: "10px", color: "white" }}>
-        <h2>Agri Chatbot</h2>
-        <button
-          style={{
-            marginLeft: "20px",
-            padding: "8px 14px",
-            borderRadius: "6px",
-            border: "none",
-            background: "white",
-            color: "#2563eb",
-            cursor: "pointer",
-          }}
-          onClick={() => navigate("/")}
-        >
-          ⬅ Back to Home
-        </button>
-      </header>
+      {/* The blue header has been removed */}
 
       {/* Chatbot runs inside iframe */}
       <iframe
-        src={process.env.REACT_APP_API_URL}   // ⚠️ Replace with your Flask/FastAPI chatbot backend URL
+        src={process.env.REACT_APP_API_URL}
         title="Agri Chatbot"
         style={{ flex: 1, border: "none" }}
       />
