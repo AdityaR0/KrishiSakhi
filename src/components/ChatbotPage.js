@@ -1,14 +1,12 @@
+// src/components/ChatbotPage.js
+
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// No longer need useNavigate if the main navbar handles it
 
 function ChatbotPage() {
-  const navigate = useNavigate();
-
   return (
-    <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-      {/* The blue header has been removed */}
-
-      {/* Chatbot runs inside iframe */}
+    // This div no longer needs a fixed height
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
       <iframe
         src={process.env.REACT_APP_API_URL}
         title="Agri Chatbot"
